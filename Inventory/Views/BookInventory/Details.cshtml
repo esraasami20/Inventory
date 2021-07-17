@@ -1,0 +1,41 @@
+﻿@model Inventory.Models.BookInventory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookInventory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.street)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "List")
+</p>

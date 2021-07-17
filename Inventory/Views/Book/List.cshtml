@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Inventory.Models.Book>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        @*<th> @Html.DisplayNameFor(model => model.BookInventory) </th>*@
+        <th> ... </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pages)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.BookInventoryId)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { bookId = item._id }) |
+            @Html.ActionLink("Details", "Details", new {bookId = item._id }) |
+            @Html.ActionLink("Delete", "Delete", new { bookId = item._id })
+        </td>
+    </tr>
+}
+
+</table>

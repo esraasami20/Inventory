@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Inventory.Models.BookInventory>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.street)
+        </th>
+        <th> ... </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.street)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { bookInventoryId = item._id }) |
+            @Html.ActionLink("Details", "Details", new { bookInventoryId = item._id }) |
+            @Html.ActionLink("Delete", "Delete", new { bookInventoryId = item._id })
+        </td>
+    </tr>
+}
+
+</table>
